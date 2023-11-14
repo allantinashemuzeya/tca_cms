@@ -1,6 +1,0 @@
-services:
-  demo_rest_api.event_subscriber:
-    class: Drupal\demo_rest_api\EventSubscriber\DemoRestApiSubscriber
-    arguments: ['@messenger']
-    tags:
-      - { name: event_subscriber }

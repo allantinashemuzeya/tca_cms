@@ -62,6 +62,7 @@
   --gin-spacing-xxl: 3rem;
   --gin-spacing-xxxl: 4rem;
   --gin-icon-color: #414247;
+  --gin-icon-size-close: 20px;
   --gin-icon-size-toolbar-secondary: 17px;
   --gin-icon-size-toolbar: 17px;
   --gin-icon-size-sidebar-toggle: 21px;
@@ -86,11 +87,17 @@
   --gin-height-sticky: 72px;
   --gin-toolbar-width-collapsed: 66px;
   --gin-toolbar-width: 256px;
+  --gin-toolbar-bg-level2: #edeff5;
+  --gin-toolbar-bg-level3: rgba(44, 45, 47, .05);
   --gin-sidebar-width: 320px;
   --gin-sidebar-offset: var(--gin-sidebar-width);
   --gin-switch: #26a769;
   --gin-shadow-button: #00000033;
   --gin-color-button-text: #fff;
+  --gin-offset-x: var(--gin-toolbar-x-offset);
+  --gin-offset-y: calc(var(--gin-toolbar-y-offset) + var(--gin-sticky-offset));
+  --gin-link-decoration-style: dotted;
+  --gin-max-line-length: 80ch;
 }
 
 @media (min-width: 61em) {
@@ -176,6 +183,7 @@
   --gin-bg-layer3: #47474c;
   --gin-bg-layer4: #19191b;
   --gin-bg-secondary: var(--gin-bg-app);
+  --gin-bg-unpublished: var(--gin-bg-warning-light);
   --gin-color-contextual: var(--gin-bg-layer3);
   --gin-border-color: #43454a;
   --gin-border-color-secondary: rgba(255, 255, 255, .075);

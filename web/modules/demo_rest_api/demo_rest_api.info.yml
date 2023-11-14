@@ -1,5 +1,0 @@
-name: Demo Rest API
-type: module
-description: Provides ability to use rest resource to feed data into the site
-package: Custom
-core_version_requirement: ^9 || ^10

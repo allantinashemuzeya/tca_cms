@@ -85,6 +85,7 @@
 
   // Icons
   --gin-icon-color: #414247;
+  --gin-icon-size-close: 20px;
   --gin-icon-size-toolbar-secondary: 17px;
   --gin-icon-size-toolbar: 17px;
   --gin-icon-size-sidebar-toggle: 21px;
@@ -129,6 +130,8 @@
   // Toolbar
   --gin-toolbar-width-collapsed: 66px;
   --gin-toolbar-width: 256px;
+  --gin-toolbar-bg-level2: #edeff5;
+  --gin-toolbar-bg-level3: #{rgba(#2c2d2f, .05)};
 
   // Sidebar
   --gin-sidebar-width: 320px;
@@ -143,6 +146,16 @@
   // Buttons
   --gin-shadow-button: #00000033;
   --gin-color-button-text: #fff;
+
+  // Drupal
+  --gin-offset-x: var(--gin-toolbar-x-offset);
+  --gin-offset-y: calc(var(--gin-toolbar-y-offset) + var(--gin-sticky-offset));
+
+  // Links
+  --gin-link-decoration-style: dotted;
+
+  // Max line length
+  --gin-max-line-length: 80ch;
 }
 
 // Density spacings
@@ -200,6 +213,9 @@
   --gin-bg-layer3: #47474c;
   --gin-bg-layer4: #19191b;
   --gin-bg-secondary: var(--gin-bg-app);
+
+  // Unpublished
+  --gin-bg-unpublished: var(--gin-bg-warning-light);
 
   // Context
   --gin-color-contextual: var(--gin-bg-layer3);

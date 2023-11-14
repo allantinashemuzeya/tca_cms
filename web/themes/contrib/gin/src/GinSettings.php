@@ -6,9 +6,9 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Drupal\user\UserDataInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\StringTranslation\StringTranslationTrait;
 
 /**
  * Service to handle overridden user settings.
@@ -275,7 +275,9 @@ class GinSettings implements ContainerInjectionInterface {
    *   The theme setting form elements.
    */
   public function getSettingsForm(AccountInterface $account = NULL): array {
-    $beta_label = ' (BETA)';
+    $experimental_label = ' <span class="gin-experimental-flag">Experimental</span>';
+    $beta_label = ' <span class="gin-beta-flag">Beta</span>';
+    $new_label = ' <span class="gin-new-flag">New</span>';
 
     $form['enable_darkmode'] = [
       '#type' => 'radios',
@@ -370,7 +372,7 @@ class GinSettings implements ContainerInjectionInterface {
     // Focus color group.
     $form['focus_group'] = [
       '#type' => 'fieldset',
-      '#title' => $this->t('Custom Focus color (BETA)'),
+      '#title' => $this->t('Custom Focus color') . $beta_label,
       '#description' => $this->t('Use with caution, values should meet a11y criteria.'),
       '#states' => [
         // Show if met.
@@ -393,7 +395,7 @@ class GinSettings implements ContainerInjectionInterface {
     // Custom Focus color setting.
     $form['focus_color'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Custom Focus color (BETA)'),
+      '#title' => $this->t('Custom Focus color') . $beta_label,
       '#title_display' => 'invisible',
       '#placeholder' => '#777777',
       '#maxlength' => 7,
@@ -408,7 +410,7 @@ class GinSettings implements ContainerInjectionInterface {
     // High contrast mode.
     $form['high_contrast_mode'] = [
       '#type' => 'checkbox',
-      '#title' => $this->t('Increase contrast (EXPERIMENTAL)'),
+      '#title' => $this->t('Increase contrast') . $experimental_label,
       '#description' => $this->t('Enables high contrast mode.'),
       '#default_value' => $account ? $this->get('high_contrast_mode', $account) : $this->getDefault('high_contrast_mode'),
     ];
@@ -422,6 +424,7 @@ class GinSettings implements ContainerInjectionInterface {
         'vertical' => $this->t('Sidebar, Vertical Toolbar (Default)'),
         'horizontal' => $this->t('Horizontal, Modern Toolbar'),
         'classic' => $this->t('Legacy, Classic Drupal Toolbar'),
+        'new' => $this->t('New Drupal Navigation, Test integration') . $new_label . $experimental_label,
       ],
       '#after_build' => [
         '_gin_toolbar_radios',

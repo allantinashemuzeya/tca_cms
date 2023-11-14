@@ -42,7 +42,6 @@
   --ck-color-image-caption-text: var(--gin-color-text-light);
   --ck-color-image-caption-background: transparent;
   --ck-border-radius: var(--gin-border-m);
-  --ck-z-modal: 98;
 }
 
 .ck .ck-content blockquote,
@@ -51,7 +50,8 @@
 }
 
 .ck.ck-sticky-panel .ck-sticky-panel__content.ck-sticky-panel__content_sticky {
-  top: var(--gin-sticky-offset);
+  z-index: 2;
+  top: calc(var(--gin-toolbar-y-offset) + var(--gin-sticky-offset)) !important;
 }
 
 .ck .ck-toolbar__separator {

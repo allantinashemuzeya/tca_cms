@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3f2434e4-e195-47a5-93e0-6e8d3e629173" name="TCA CMS">
+        <fileTransfer rootFolder="/var/www/cms" accessType="SFTP" host="41.76.111.232" port="22" sshConfigId="42627783-6185-44af-96ff-70875e9613b5" sshConfig="root@41.76.111.232:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
